@@ -18,6 +18,7 @@ stages:
     - data/train_split.csv
     outs:
     - data/features/train.csv
+    - data/features/test.csv
     - artifacts/scaler.joblib
 
   train:
@@ -35,4 +36,5 @@ stages:
     deps:
     - evaluate.py
     - data/features/train.csv
+    - data/features/test.csv
     - artifacts/clf.joblib

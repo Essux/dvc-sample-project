@@ -27,12 +27,15 @@ stages:
       md5: 8f55c2ac6d879a962fe839dd4e8a0250
       size: 491081735
     - path: normalize.py
-      md5: b3cf8d0dc14d070ea8abb3317e058973
-      size: 511
+      md5: 3bc94fd639d6902d09246bebf69c5043
+      size: 844
     outs:
     - path: artifacts/scaler.joblib
-      md5: 0d6bb4f01a11d2b65346776801bf206a
-      size: 4216
+      md5: 6af5e9e85a1e9b7373ccb7405494173d
+      size: 2937
+    - path: data/features/test.csv
+      md5: 7ffa9edc82c661dc63d837fc6f6afa43
+      size: 120147083
     - path: data/features/train.csv
       md5: d2cc1befc91de0e7b757d92f18db9e6a
       size: 1081833894
@@ -47,20 +50,23 @@ stages:
       size: 496
     params:
       params.yaml:
-        train.shrinkage: 0.1
+        train.shrinkage: 0
     outs:
     - path: artifacts/clf.joblib
-      md5: a3e264e8ccf7c9ebce1ef1b08406348b
-      size: 84829
+      md5: a321e73539ee9b4f27bf7c8ea6a610e3
+      size: 84822
   evaluate:
     cmd: python evaluate.py
     deps:
     - path: artifacts/clf.joblib
-      md5: a3e264e8ccf7c9ebce1ef1b08406348b
-      size: 84829
+      md5: a321e73539ee9b4f27bf7c8ea6a610e3
+      size: 84822
+    - path: data/features/test.csv
+      md5: 7ffa9edc82c661dc63d837fc6f6afa43
+      size: 120147083
     - path: data/features/train.csv
       md5: d2cc1befc91de0e7b757d92f18db9e6a
       size: 1081833894
     - path: evaluate.py
-      md5: fdd125d5581beae329f6fb89c265f6d2
-      size: 324
+      md5: 0e2c766448e21eef61d6839950489dfd
+      size: 435
