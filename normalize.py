@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+from joblib import dump
 from sklearn.preprocessing import StandardScaler
 
 df = pd.read_csv('data/train_split.csv')
@@ -13,3 +14,7 @@ df = pd.DataFrame(data=X, columns=df.columns)
 if not os.path.exists('data/features'):
     os.mkdir('data/features')
 df.to_csv('data/features/train.csv')
+
+if not os.path.exists('artifacts/'):
+    os.mkdir('artifacts/')
+dump(scaler, 'artifacts/scaler.joblib') 

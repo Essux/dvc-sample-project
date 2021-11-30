@@ -16,3 +16,4 @@ stages:
     - data/train_split.csv
     outs:
     - data/features/train.csv
+    - artifacts/scaler.joblib
