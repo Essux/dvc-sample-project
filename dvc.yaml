@@ -38,3 +38,6 @@ stages:
     - data/features/train.csv
     - data/features/test.csv
     - artifacts/clf.joblib
+    metrics:
+    - metrics.json:
+        cache: false
