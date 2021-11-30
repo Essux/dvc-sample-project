@@ -10,3 +10,9 @@ stages:
     - data/train_split.csv
     - data/test_split.csv
 
+  normalize:
+    cmd: python normalize.py
+    deps:
+    - data/train_split.csv
+    outs:
+    - data/features/train.csv
