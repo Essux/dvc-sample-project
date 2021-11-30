@@ -23,10 +23,13 @@ stages:
     - path: data/train_split.csv
       md5: 8f55c2ac6d879a962fe839dd4e8a0250
       size: 491081735
+    - path: normalize.py
+      md5: b3cf8d0dc14d070ea8abb3317e058973
+      size: 511
     outs:
     - path: artifacts/scaler.joblib
       md5: 0d6bb4f01a11d2b65346776801bf206a
       size: 4216
     - path: data/features/train.csv
-      md5: 20bdf597fccbd5d466777a4eecafcfe3
-      size: 1080753887
+      md5: d2cc1befc91de0e7b757d92f18db9e6a
+      size: 1081833894

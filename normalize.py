@@ -10,6 +10,7 @@ df.pop('id')
 scaler = StandardScaler()
 X = scaler.fit_transform(df)
 df = pd.DataFrame(data=X, columns=df.columns)
+df['target'] = y
 
 if not os.path.exists('data/features'):
     os.mkdir('data/features')
