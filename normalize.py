@@ -18,4 +18,4 @@ df.to_csv('data/features/train.csv')
 
 if not os.path.exists('artifacts/'):
     os.mkdir('artifacts/')
-dump(scaler, 'artifacts/scaler.joblib') 
+dump(scaler, 'artifacts/scaler.joblib')

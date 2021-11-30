@@ -45,7 +45,22 @@ stages:
     - path: train.py
       md5: 5bd9fa95b60b116629baa92668dd1c31
       size: 496
+    params:
+      params.yaml:
+        train.shrinkage: 0.1
     outs:
     - path: artifacts/clf.joblib
-      md5: a321e73539ee9b4f27bf7c8ea6a610e3
-      size: 84822
+      md5: a3e264e8ccf7c9ebce1ef1b08406348b
+      size: 84829
+  evaluate:
+    cmd: python evaluate.py
+    deps:
+    - path: artifacts/clf.joblib
+      md5: a3e264e8ccf7c9ebce1ef1b08406348b
+      size: 84829
+    - path: data/features/train.csv
+      md5: d2cc1befc91de0e7b757d92f18db9e6a
+      size: 1081833894
+    - path: evaluate.py
+      md5: fdd125d5581beae329f6fb89c265f6d2
+      size: 324

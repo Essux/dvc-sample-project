@@ -25,5 +25,14 @@ stages:
     deps:
     - train.py
     - data/features/train.csv
+    params:
+    - train.shrinkage
     outs:
+    - artifacts/clf.joblib
+
+  evaluate:
+    cmd: python evaluate.py
+    deps:
+    - evaluate.py
+    - data/features/train.csv
     - artifacts/clf.joblib
