@@ -6,6 +6,9 @@ stages:
     - path: data/train.csv
       md5: cc009d6ebbcb866672a81ac3a2333e92
       size: 545645113
+    - path: data_split.py
+      md5: 34ce044d1974b153effcb8fdc2830770
+      size: 444
     params:
       params.yaml:
         data_split.seed: 20170428
@@ -33,3 +36,16 @@ stages:
     - path: data/features/train.csv
       md5: d2cc1befc91de0e7b757d92f18db9e6a
       size: 1081833894
+  train:
+    cmd: python train.py
+    deps:
+    - path: data/features/train.csv
+      md5: d2cc1befc91de0e7b757d92f18db9e6a
+      size: 1081833894
+    - path: train.py
+      md5: 5bd9fa95b60b116629baa92668dd1c31
+      size: 496
+    outs:
+    - path: artifacts/clf.joblib
+      md5: a321e73539ee9b4f27bf7c8ea6a610e3
+      size: 84822

@@ -3,11 +3,11 @@ stages:
     cmd: python data_split.py
     deps:
     - data/train.csv
+    - data_split.py
     params:
     - data_split.seed
     - data_split.test_size
     outs:
-    - data_split.py
     - data/train_split.csv
     - data/test_split.csv
 
@@ -19,3 +19,11 @@ stages:
     outs:
     - data/features/train.csv
     - artifacts/scaler.joblib
+
+  train:
+    cmd: python train.py
+    deps:
+    - train.py
+    - data/features/train.csv
+    outs:
+    - artifacts/clf.joblib
