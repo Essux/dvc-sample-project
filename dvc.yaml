@@ -7,12 +7,14 @@ stages:
     - data_split.seed
     - data_split.test_size
     outs:
+    - data_split.py
     - data/train_split.csv
     - data/test_split.csv
 
   normalize:
     cmd: python normalize.py
     deps:
+    - normalize.py
     - data/train_split.csv
     outs:
     - data/features/train.csv
