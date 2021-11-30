@@ -10,7 +10,8 @@ Code and (meta)data tracking is done by GitHub. DVC works under the hood to stor
 To showcase how easy to reproduce work done using DVC in order to run everything from scratch you just have to run:
 
 ```
-dvc repro
+dvc pull # Retrieve data
+dvc repro # Run pipeline
 ```
 
 To run hyperparameter tuning you just have to modify any parameter in the `params.yaml` file and then run:
