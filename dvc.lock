@@ -1,0 +1,19 @@
+schema: '2.0'
+stages:
+  data_split:
+    cmd: python data_split.py
+    deps:
+    - path: data/train.csv
+      md5: cc009d6ebbcb866672a81ac3a2333e92
+      size: 545645113
+    params:
+      params.yaml:
+        data_split.seed: 20170428
+        data_split.test_size: 0.1
+    outs:
+    - path: data/test_split.csv
+      md5: 31e7c68c36480fb334514a3276a66ab3
+      size: 54566056
+    - path: data/train_split.csv
+      md5: 8f55c2ac6d879a962fe839dd4e8a0250
+      size: 491081735

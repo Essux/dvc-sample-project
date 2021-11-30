@@ -1,0 +1,12 @@
+stages:
+  data_split:
+    cmd: python data_split.py
+    deps:
+    - data/train.csv
+    params:
+    - data_split.seed
+    - data_split.test_size
+    outs:
+    - data/train_split.csv
+    - data/test_split.csv
+
